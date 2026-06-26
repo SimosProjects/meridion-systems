@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spyglass &mdash; Market intelligence and options analysis platform by Meridion Systems. Unattended daily screening, regime classification, and Discord-delivered signals.">
+  <title>Spyglass &mdash; Meridion Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">Meridion Systems</a>
+    <ul class="nav-links">
+      <li><a href="vela.html">Vela</a></li>
+      <li><a href="spyglass.html" class="active">Spyglass</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <div class="nav-rule"></div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Spyglass</h1>
+        <p class="subtitle">Market Intelligence &amp; Options Analysis Platform</p>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">GitHub Actions</span>
+          <span class="badge">Discord</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- What it does -->
+    <section class="intro-section">
+      <div class="container">
+        <p class="intro-text">Spyglass is a Python-based screening engine that runs unattended daily analysis across equities, classifies market regimes, and generates systematic trading signals and options strategy alerts. Results are delivered automatically through Discord &mdash; no manual intervention required.</p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="features-section">
+      <div class="container">
+        <p class="section-label">How It Works</p>
+        <div class="features-grid">
+
+          <div class="feature-block">
+            <h3>Market Regime Classification</h3>
+            <p>A five-regime market classifier evaluates current conditions before any signal is generated. Position sizing and strategy selection adapt to the classified regime &mdash; the same strategy doesn't run identically in trending and mean-reverting environments.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Options Strategy Engine</h3>
+            <p>Full lifecycle management of the options wheel strategy: identifies candidates for cash-secured puts, tracks through potential assignment, manages covered calls, and handles rolling or expiration decisions. Each stage is governed by risk-based position sizing.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Automated Operations</h3>
+            <p>Unattended daily execution on GitHub Actions, gated by an NYSE trading-calendar check. Three-channel Discord alerting delivers signals, status updates, and P&amp;L summaries. Batch data processing reduced screening runtime from ~10 minutes to under 2.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering stats -->
+    <section class="stats-section">
+      <div class="container">
+        <p class="section-label">Engineering Details</p>
+        <div class="stats-grid">
+
+          <div class="stat-block">
+            <div class="stat-num">56</div>
+            <div class="stat-key">Tests</div>
+            <div class="stat-desc">Unit and integration tiers covering screening logic, regime classification, and strategy lifecycle.</div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-head">Event Log</div>
+            <div class="stat-key">Auditability</div>
+            <div class="stat-desc">Append-only event log enabling full monthly P&amp;L reconstruction from first principles.</div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-head">Atomic Writes</div>
+            <div class="stat-key">Data Integrity</div>
+            <div class="stat-desc">All output files are written atomically to prevent corruption on interruption or failure.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>simonson.dev@gmail.com &middot; <a href="https://linkedin.com/in/christopher-simonson">linkedin.com/in/christopher-simonson</a> &middot; &copy; 2026 Meridion Systems</p>
+  </footer>
+
+</body>
+</html>

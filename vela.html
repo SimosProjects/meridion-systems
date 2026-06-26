@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vela — Production-grade automated trading platform built in C# and .NET 10 by Meridion Systems. Full lifecycle from alert ingestion through IB execution and position management.">
+  <title>Vela &mdash; Meridion Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">Meridion Systems</a>
+    <ul class="nav-links">
+      <li><a href="vela.html" class="active">Vela</a></li>
+      <li><a href="spyglass.html">Spyglass</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <div class="nav-rule"></div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Vela</h1>
+        <p class="subtitle">Automated Stock Trading Platform</p>
+        <div class="badge-row">
+          <span class="badge">C#</span>
+          <span class="badge">.NET 10</span>
+          <span class="badge">ASP.NET Core</span>
+          <span class="badge">PostgreSQL</span>
+          <span class="badge">Docker</span>
+          <span class="badge">Interactive Brokers API</span>
+          <span class="badge">Entity Framework Core</span>
+          <span class="badge">xUnit</span>
+          <span class="badge">TestContainers</span>
+          <span class="badge">GitHub Actions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- What it does -->
+    <section class="intro-section">
+      <div class="container">
+        <p class="intro-text">Vela is a production-grade automated trading platform that monitors markets, evaluates risk, and executes orders against an Interactive Brokers account. It runs end-to-end daily &mdash; handling the full lifecycle from market data ingestion through order placement, position management, and operational reporting.</p>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="features-section">
+      <div class="container">
+        <p class="section-label">Architecture</p>
+        <div class="features-grid">
+
+          <div class="feature-block">
+            <h3>Resilient Data Ingestion</h3>
+            <p>Dual ingestion pipeline: a polling background service with Polly retry provides continuous data flow, while a real-time SignalR listener handles low-latency alert processing. If either channel degrades, the other continues without interruption.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Durable State &amp; Recovery</h3>
+            <p>Position state is persisted to PostgreSQL on every change. On restart, a recovery service reconciles database state, broker positions, and in-flight alert state &mdash; ensuring the system resumes cleanly without stranding open positions.</p>
+          </div>
+
+          <div class="feature-block">
+            <h3>Testable by Design</h3>
+            <p>A clean IBrokerService abstraction decouples all order logic from the live broker. A NullBrokerService handles testing; IbkrBrokerService handles live execution. The system is fully exercisable without a live connection.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering stats -->
+    <section class="stats-section">
+      <div class="container">
+        <p class="section-label">Engineering Details</p>
+        <div class="stats-grid">
+
+          <div class="stat-block">
+            <div class="stat-num">255</div>
+            <div class="stat-key">Tests</div>
+            <div class="stat-desc">Unit, integration, API (WebApplicationFactory), database (TestContainers), and live broker integration tiers.</div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-head">CI/CD</div>
+            <div class="stat-key">GitHub Actions</div>
+            <div class="stat-desc">Split unit and integration steps, PostgreSQL service container, Docker image publishing to GHCR.</div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-head">PostgreSQL</div>
+            <div class="stat-key">Database</div>
+            <div class="stat-desc">EF Core 10 migrations, batched inserts, and idempotent deduplication across both ingestion paths.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>simonson.dev@gmail.com &middot; <a href="https://linkedin.com/in/christopher-simonson">linkedin.com/in/christopher-simonson</a> &middot; &copy; 2026 Meridion Systems</p>
+  </footer>
+
+</body>
+</html>
