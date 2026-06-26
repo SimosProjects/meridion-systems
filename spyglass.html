@@ -3,102 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Spyglass &mdash; Market intelligence and options analysis platform by Meridion Systems. Unattended daily screening, regime classification, and Discord-delivered signals.">
+  <meta name="description" content="Spyglass — Python-based market intelligence platform. Unattended daily screening, five-regime classification, composite scoring, and Discord-delivered signals.">
   <title>Spyglass &mdash; Meridion Systems</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<header class="site-header">
   <nav class="site-nav">
-    <a href="index.html" class="nav-logo">Meridion Systems</a>
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon">M</div>
+      <div class="logo-text">Meridion Systems<small>Engineering Studio</small></div>
+    </a>
     <ul class="nav-links">
       <li><a href="vela.html">Vela</a></li>
       <li><a href="spyglass.html" class="active">Spyglass</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
+    <a href="about.html#contact" class="nav-cta">Let&rsquo;s Talk</a>
   </nav>
-  <div class="nav-rule"></div>
+</header>
 
-  <main>
+<section class="page-hero">
+  <div class="container">
+    <span class="page-cat">Market Intelligence Platform &middot; Python</span>
+    <h1>Spyglass</h1>
+    <p class="subtitle">Market Intelligence &amp; Options Analysis Platform</p>
+    <div class="badge-row">
+      <span class="badge">Python</span>
+      <span class="badge">GitHub Actions</span>
+      <span class="badge">Discord</span>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1>Spyglass</h1>
-        <p class="subtitle">Market Intelligence &amp; Options Analysis Platform</p>
-        <div class="badge-row">
-          <span class="badge">Python</span>
-          <span class="badge">GitHub Actions</span>
-          <span class="badge">Discord</span>
-        </div>
+<section class="intro-section">
+  <div class="container">
+    <p class="intro-text">Spyglass is a Python-based screening engine that runs unattended daily analysis across equities, classifies market regimes, and generates systematic trading signals and options strategy alerts. Results are delivered automatically through Discord &mdash; no manual intervention required.</p>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <div class="features-grid">
+      <div class="feature-block">
+        <h3>Market Regime Classification</h3>
+        <p>A five-regime market classifier evaluates current conditions before any signal is generated. Position sizing and strategy selection adapt to the classified regime &mdash; the same strategy doesn&rsquo;t run identically in trending and mean-reverting environments.</p>
       </div>
-    </section>
-
-    <!-- What it does -->
-    <section class="intro-section">
-      <div class="container">
-        <p class="intro-text">Spyglass is a Python-based screening engine that runs unattended daily analysis across equities, classifies market regimes, and generates systematic trading signals and options strategy alerts. Results are delivered automatically through Discord &mdash; no manual intervention required.</p>
+      <div class="feature-block">
+        <h3>Options Strategy Engine</h3>
+        <p>Full lifecycle management of the options wheel strategy: identifies candidates for cash-secured puts, tracks through potential assignment, manages covered calls, and handles rolling or expiration decisions. Each stage is governed by risk-based position sizing.</p>
       </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="features-section">
-      <div class="container">
-        <p class="section-label">How It Works</p>
-        <div class="features-grid">
-
-          <div class="feature-block">
-            <h3>Market Regime Classification</h3>
-            <p>A five-regime market classifier evaluates current conditions before any signal is generated. Position sizing and strategy selection adapt to the classified regime &mdash; the same strategy doesn't run identically in trending and mean-reverting environments.</p>
-          </div>
-
-          <div class="feature-block">
-            <h3>Options Strategy Engine</h3>
-            <p>Full lifecycle management of the options wheel strategy: identifies candidates for cash-secured puts, tracks through potential assignment, manages covered calls, and handles rolling or expiration decisions. Each stage is governed by risk-based position sizing.</p>
-          </div>
-
-          <div class="feature-block">
-            <h3>Automated Operations</h3>
-            <p>Unattended daily execution on GitHub Actions, gated by an NYSE trading-calendar check. Three-channel Discord alerting delivers signals, status updates, and P&amp;L summaries. Batch data processing reduced screening runtime from ~10 minutes to under 2.</p>
-          </div>
-
-        </div>
+      <div class="feature-block">
+        <h3>Automated Operations</h3>
+        <p>Unattended daily execution on GitHub Actions, gated by an NYSE trading-calendar check. Three-channel Discord alerting delivers signals, status updates, and P&amp;L summaries. Batch data processing reduced screening runtime from ~10 minutes to under 2.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Engineering stats -->
-    <section class="stats-section">
-      <div class="container">
-        <p class="section-label">Engineering Details</p>
-        <div class="stats-grid">
-
-          <div class="stat-block">
-            <div class="stat-num">56</div>
-            <div class="stat-key">Tests</div>
-            <div class="stat-desc">Unit and integration tiers covering screening logic, regime classification, and strategy lifecycle.</div>
-          </div>
-
-          <div class="stat-block">
-            <div class="stat-head">Event Log</div>
-            <div class="stat-key">Auditability</div>
-            <div class="stat-desc">Append-only event log enabling full monthly P&amp;L reconstruction from first principles.</div>
-          </div>
-
-          <div class="stat-block">
-            <div class="stat-head">Atomic Writes</div>
-            <div class="stat-key">Data Integrity</div>
-            <div class="stat-desc">All output files are written atomically to prevent corruption on interruption or failure.</div>
-          </div>
-
-        </div>
+<section class="stats-section">
+  <div class="container">
+    <div class="section-label">Engineering Details</div>
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-num">56</div>
+        <div class="stat-key">Tests</div>
+        <div class="stat-desc">Unit and integration tiers covering screening logic, regime classification, and strategy lifecycle.</div>
       </div>
-    </section>
+      <div class="stat-block">
+        <div class="stat-head">Event Log</div>
+        <div class="stat-key">Auditability</div>
+        <div class="stat-desc">Append-only event log enabling full monthly P&amp;L reconstruction from first principles.</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-head">Atomic Writes</div>
+        <div class="stat-key">Data Integrity</div>
+        <div class="stat-desc">All output files written atomically to prevent corruption on interruption or failure.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </main>
+<section class="cta-section">
+  <div class="container">
+    <h2>Interested in the Architecture?</h2>
+    <p>Get in touch to discuss how Spyglass was built and how similar systems can be designed.</p>
+    <div class="cta-row">
+      <a href="about.html" class="btn-primary">About Christopher &rarr;</a>
+      <a href="mailto:simonson.dev@gmail.com" class="cta-email">simonson.dev@gmail.com</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>simonson.dev@gmail.com &middot; <a href="https://linkedin.com/in/christopher-simonson">linkedin.com/in/christopher-simonson</a> &middot; &copy; 2026 Meridion Systems</p>
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-wrap">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">Meridion Systems<small>Engineering Studio</small></div>
+        </a>
+        <p>Independent .NET engineering practice building production-grade backend systems and automated trading infrastructure.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Systems</h5>
+        <ul>
+          <li><a href="vela.html">Vela &mdash; Trading Platform</a></li>
+          <li><a href="spyglass.html">Spyglass &mdash; Screener</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Christopher</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Stack</h5>
+        <ul>
+          <li><a href="#">C# &middot; .NET 10</a></li>
+          <li><a href="#">PostgreSQL</a></li>
+          <li><a href="#">Docker &middot; GitHub Actions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Meridion Systems. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/christopher-simonson" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+        </a>
+        <a href="mailto:simonson.dev@gmail.com" title="Email">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
