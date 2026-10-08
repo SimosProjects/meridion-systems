@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Products
+description: Products designed and built by Meridion Systems, with their current status.
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="label">Products</p>
+    <h1>Built in-house, shown honestly</h1>
+    <p class="sub">Everything here is designed and built by Meridion Systems. None of it has launched yet, so each product shows where it stands today.</p>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="list-heading" style="padding-bottom: var(--section)">
+  <h2 id="list-heading" class="visually-hidden">Product list</h2>
+  {% include "product-list.njk" %}
+</section>
+
+{% include "cta.njk" %}

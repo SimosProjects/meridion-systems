@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: How to reach Meridion Systems.
+permalink: /contact/
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h1>Get in touch</h1>
+    <p class="sub">Questions about a product, or anything else? A person reads every message.</p>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom: var(--section)">
+  <div class="pair">
+    <a class="tile" href="mailto:{{ site.email }}">
+      <p class="tile__k">Email</p>
+      <p class="tile__v">{{ site.email }}</p>
+      <p class="tile__d">Best for questions and feedback.</p>
+    </a>
+    <a class="tile" href="{{ site.founder.linkedin }}">
+      <p class="tile__k">LinkedIn</p>
+      <p class="tile__v">{{ site.founder.name }}</p>
+      <p class="tile__d">The founder's profile.</p>
+    </a>
+  </div>
+</section>

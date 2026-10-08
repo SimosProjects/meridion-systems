@@ -1,0 +1,8 @@
+{#- One phone frame. Shows a real screenshot when given one, otherwise a clearly marked placeholder. -#}
+{% macro device(shot) %}
+  {%- if shot %}
+  <div class="device"><img src="{{ shot.src }}" alt="{{ shot.alt }}" width="{{ shot.width }}" height="{{ shot.height }}" decoding="async"></div>
+  {%- else %}
+  <div class="device device--placeholder" role="img" aria-label="Placeholder: app screenshot goes here"><span>Placeholder:<br>app screenshot</span></div>
+  {%- endif %}
+{% endmacro %}

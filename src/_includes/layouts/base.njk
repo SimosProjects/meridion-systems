@@ -1,0 +1,88 @@
+{%- set pageTitle = (title + " | " + site.name) if title else (site.name + " | Founder-led software studio") -%}
+{%- set pageDescription = description or site.description -%}
+{%- set pageOg = ogImage or site.ogImage -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <link rel="canonical" href="{{ page.url | absoluteUrl(site.url) }}">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="{{ '#121412' if theme == 'kyntra' else '#07091A' }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ page.url | absoluteUrl(site.url) }}">
+  <meta property="og:image" content="{{ pageOg | absoluteUrl(site.url) }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/kyntra.css">
+</head>
+<body{% if theme %} data-theme="{{ theme }}"{% endif %}>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="logo" href="/" aria-label="{{ site.name }}, home">
+        <span class="logo__icon" aria-hidden="true">M</span>
+        <span class="logo__text">Meridion<span class="logo__sys"> Systems</span><small>Software studio</small></span>
+      </a>
+      <nav aria-label="Main" class="nav">
+        {%- for item in site.nav %}
+        <a href="{{ item.url }}"{% if item.cta %} class="nav__cta"{% endif %}{% if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <a class="logo" href="/" aria-label="{{ site.name }}, home">
+            <span class="logo__icon" aria-hidden="true">M</span>
+            <span class="logo__text">Meridion<span class="logo__sys"> Systems</span><small>Software studio</small></span>
+          </a>
+          <p class="site-footer__about">A founder-led software studio that designs and builds its own products.</p>
+        </div>
+        <nav aria-labelledby="f-products">
+          <h2 id="f-products">Products</h2>
+          <ul>
+            {%- for product in products %}{% if product.published and product.page %}
+            <li><a href="{{ product.page }}">{{ product.name }}</a></li>
+            {%- endif %}{% endfor %}
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-studio">
+          <h2 id="f-studio">Studio</h2>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li><a href="{{ site.founder.linkedin }}">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__copy">&copy; {{ site.year }} Meridion Systems</p>
+    </div>
+  </footer>
+</body>
+</html>
