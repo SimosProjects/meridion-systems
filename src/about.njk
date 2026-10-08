@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+title: About
+description: How Meridion Systems works. A founder-led studio focused on its own products and on engineering quality.
+permalink: /about/
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="label">About</p>
+    <h1>How the studio works</h1>
+    <p class="sub">Meridion Systems is a founder-led software studio. We build a small number of our own products and take each one from idea to release.</p>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="principles-heading">
+  <div class="wrap">
+    <h2 class="heading section__head" id="principles-heading">What we care about</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Product first</h3>
+        <p>We start from a specific problem and the people who have it. Features earn their place by making the product easier to use, not by filling a roadmap.</p>
+      </div>
+      <div class="card">
+        <h3>Founder-led</h3>
+        <p>The studio is deliberately small. The person who designs a feature also builds, tests and ships it, so nothing gets lost in a handoff.</p>
+      </div>
+      <div class="card">
+        <h3>Engineering quality</h3>
+        <p>Automated tests, continuous integration and careful handling of data are part of the work from the first commit. Privacy is decided in the design, not added later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="process-heading">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="label">How we build</p>
+      <h2 class="heading" id="process-heading">From idea to release</h2>
+    </div>
+    <ol class="steps">
+      <li><div><h3>Scope</h3><p>Decide what the product has to do, who it's for, and what can go wrong before writing code.</p></div></li>
+      <li><div><h3>Design</h3><p>Shape the screens and the data model together, so the product stays simple as it grows.</p></div></li>
+      <li><div><h3>Build</h3><p>Ship in small steps, with automated tests at each layer.</p></div></li>
+      <li><div><h3>Test with people</h3><p>Put early versions in front of real users in private testing and fix what they run into.</p></div></li>
+      <li><div><h3>Release and maintain</h3><p>Automated builds and deploys, then steady updates once the product is out.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="founder-heading">
+  <div class="wrap">
+    <h2 class="heading section__head" id="founder-heading">Founder</h2>
+    <div class="person">
+      <div class="person__avatar" aria-hidden="true">CS</div>
+      <div>
+        <p class="person__name">{{ site.founder.name }}</p>
+        <p class="person__role">{{ site.founder.role }}</p>
+        <p>Christopher founded Meridion Systems to design and build its products end to end.</p>
+        <p><a href="{{ site.founder.linkedin }}">LinkedIn profile</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "cta.njk" %}

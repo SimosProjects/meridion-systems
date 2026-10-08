@@ -1,0 +1,22 @@
+{#- Renders each published product as a feature card. Used on Home and Products. -#}
+{% from "macros.njk" import device %}
+{%- for product in products %}{% if product.published %}
+<article class="product">
+  <div class="product__visual">
+    <p class="product__mark" aria-hidden="true">{{ product.name }}</p>
+    <div class="devices" role="group" aria-label="{{ product.name }} screenshots">
+      {{ device(product.screenshots[0]) }}
+      {{ device(product.screenshots[1]) }}
+    </div>
+  </div>
+  <div class="product__body">
+    <p class="product__cat">{{ product.category }}</p>
+    <h3><a class="product__link" href="{{ product.page }}">{{ product.name }}</a></h3>
+    {%- if product.tagline %}<p class="product__tagline">{{ product.tagline }}</p>{% endif %}
+    <p class="product__summary">{{ product.summary }}</p>
+    <p class="badge"><span class="badge__dot" aria-hidden="true"></span>{{ product.statusLabel }}{% if product.statusNote %}, {{ product.statusNote | lower }}{% endif %}</p>
+    {%- if product.builtBy %}<p class="product__summary" style="margin-top:.75rem">Built by {{ product.builtBy }}</p>{% endif %}
+    <p class="product__more" aria-hidden="true">View product →</p>
+  </div>
+</article>
+{%- endif %}{% endfor %}

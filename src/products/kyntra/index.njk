@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+theme: kyntra
+title: Kyntra
+description: "Kyntra is an AI gym workout tracker for iOS and Android. Fast offline logging, a shared database of gyms and their equipment, and machine identification from a photo. In development."
+ogImage: /assets/img/og-kyntra.png
+---
+{% from "macros.njk" import device %}
+{%- set kyntra = products | selectattr("slug", "equalto", "kyntra") | first -%}
+<section class="k-hero">
+  <div class="wrap k-hero__inner">
+    <div class="k-hero__text">
+      <div class="k-app">
+        {%- if kyntra.icon %}
+        <img class="k-app__icon" src="{{ kyntra.icon }}" alt="" width="56" height="56">
+        {%- else %}
+        <div class="k-app__icon k-app__icon--placeholder" role="img" aria-label="Placeholder: app icon goes here">App icon</div>
+        {%- endif %}
+        <p class="k-app__name">Kyntra</p>
+      </div>
+      <h1>Point. Lift. Log.</h1>
+      <p class="k-hero__lead">An AI workout tracker for iOS and Android. Log a set in seconds, even with no signal, and point your camera at a machine to find out what it's for.</p>
+      <p class="badge"><span class="badge__dot" aria-hidden="true"></span>In development, private testing</p>
+    </div>
+    <div class="devices" role="group" aria-label="Kyntra screenshots">
+      {{ device(kyntra.screenshots[0]) }}
+      {{ device(kyntra.screenshots[1]) }}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="k-features">
+  <div class="wrap">
+    <h2 id="k-features" class="visually-hidden">What Kyntra does</h2>
+    <div class="k-features">
+      <div class="k-feature">
+        <h3>Point</h3>
+        <p>Not sure what a machine does? Take a photo. Kyntra identifies the machine and suggests exercises you can do on it.</p>
+      </div>
+      <div class="k-feature">
+        <h3>Lift</h3>
+        <p>Kyntra knows your gym. A shared database of gyms and their equipment means your workout fits what's actually on the floor.</p>
+      </div>
+      <div class="k-feature">
+        <h3>Log</h3>
+        <p>Record sets and reps in a couple of taps. Logging works offline, so a basement gym with no signal doesn't slow you down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="k-privacy">
+  <div class="k-callout">
+    <h2 id="k-privacy">Photos are never stored</h2>
+    <p>A photo of a machine is used only to identify it and suggest exercises. Kyntra doesn't keep it.</p>
+  </div>
+</section>
+
+{%- if kyntra.screenshots.length > 2 %}
+<section class="section wrap" aria-labelledby="k-screens">
+  <h2 id="k-screens" class="heading">Inside the app</h2>
+  <ul class="k-screens">
+    {%- for shot in kyntra.screenshots %}
+    <li><img src="{{ shot.src }}" alt="{{ shot.alt }}" width="{{ shot.width }}" height="{{ shot.height }}" loading="lazy" decoding="async"></li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<section class="section wrap" aria-labelledby="k-availability">
+  <div class="k-callout">
+    <h2 id="k-availability">Availability</h2>
+    <p>Kyntra is in private testing on iOS and Android. It isn't in the App Store or Google Play yet.</p>
+    <p>Questions about Kyntra? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </div>
+</section>

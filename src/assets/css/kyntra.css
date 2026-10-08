@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Kyntra: font faces, plus the product page's own branding.
+   The font faces load on every page (the product card on Home and Products
+   uses the wordmark); the theme only applies on pages with theme: kyntra.
+   ========================================================================== */
+
+@font-face { font-family: "Barlow"; src: url("/assets/fonts/barlow-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("/assets/fonts/barlow-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("/assets/fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("/assets/fonts/barlow-condensed-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+
+[data-theme="kyntra"] {
+  --bg: #121412;
+  --bg-alt: #171A16;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.12);
+  --text-1: #F1F3EC;
+  --text-2: #B9BFB0;
+  --text-3: #A3AA99;
+  --accent: #C6FF3D;
+  --accent-hover: #D8FF76;
+  --accent-bg: rgba(198, 255, 61, 0.1);
+  --accent-border: rgba(198, 255, 61, 0.4);
+  --accent-text: #C6FF3D;
+  --on-accent: #121412;
+  --header-bg: rgba(18, 20, 18, 0.88);
+  --glow: rgba(198, 255, 61, 0.09);
+  --font: "Barlow", system-ui, sans-serif;
+}
+[data-theme="kyntra"] .card:hover { background: #1A1D19; }
+[data-theme="kyntra"] .site-header,
+[data-theme="kyntra"] .site-footer { font-family: var(--font); }
+
+.k-display { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 800; text-transform: uppercase; }
+
+/* ---------- Hero ---------- */
+
+.k-hero { position: relative; overflow: hidden; padding-block: clamp(3rem, 8vw, 5.5rem) 0; border-bottom: 1px solid var(--border); }
+.k-hero::before {
+  content: ""; position: absolute; top: -10rem; right: -6rem; width: 46rem; height: 46rem;
+  background: radial-gradient(circle, var(--glow) 0%, transparent 65%); pointer-events: none;
+}
+.k-hero__inner { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: end; }
+.k-hero__text { padding-bottom: clamp(3rem, 7vw, 5.5rem); }
+.k-app { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.75rem; }
+.k-app__icon { width: 3.5rem; height: 3.5rem; border-radius: 22%; }
+.k-app__icon--placeholder {
+  display: grid; place-items: center; border: 2px dashed var(--accent-border);
+  color: var(--text-2); font-size: 0.625rem; text-align: center; line-height: 1.2; padding: 0.25rem;
+}
+.k-app__name { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 1.75rem; }
+.k-hero h1 {
+  font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 800; text-transform: uppercase;
+  font-size: clamp(3.5rem, 12vw, 8.5rem); line-height: 0.86; color: var(--accent); max-width: 6ch;
+}
+.k-hero__lead { margin-top: 1.75rem; max-width: 32rem; font-size: clamp(1.125rem, 2vw, 1.3125rem); color: var(--text-1); line-height: 1.5; }
+.k-hero .badge { margin-top: 1.5rem; }
+.k-hero .devices { padding-top: 0; }
+.k-hero .device { width: clamp(7.5rem, 17vw, 12.5rem); border-width: 8px; border-radius: 2.25rem 2.25rem 0 0; }
+.k-hero .device--placeholder { border-width: 2px; border-bottom: 0; }
+@media (max-width: 52rem) {
+  .k-hero__inner { grid-template-columns: 1fr; gap: 0; }
+  .k-hero .device { width: min(40vw, 10rem); }
+}
+
+/* ---------- Sections ---------- */
+
+.k-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 3rem); }
+.k-feature h3 {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; padding-bottom: 0.75rem; margin-bottom: 1rem;
+  border-bottom: 3px solid var(--accent);
+}
+.k-feature p { color: var(--text-2); font-size: 1.125rem; }
+@media (max-width: 52rem) { .k-features { grid-template-columns: 1fr; } }
+
+.k-callout { padding: clamp(1.75rem, 4vw, 2.75rem); background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px; }
+.k-callout h2 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.05; margin-bottom: 0.625rem; }
+.k-callout p { max-width: 38rem; color: var(--text-2); font-size: 1.125rem; }
+.k-callout p + p { margin-top: 0.75rem; }
+
+.k-screens { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(13rem, 1fr); gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
+.k-screens li { scroll-snap-align: start; }
+.k-screens img { width: 100%; border-radius: 1.75rem; border: 1px solid var(--border); }

@@ -1,0 +1,30 @@
+---
+# Old URLs from the previous site. GitHub Pages can't do server redirects,
+# so each old URL gets a small page that forwards to its new home.
+pagination:
+  data: oldPages
+  size: 1
+  alias: redirect
+oldPages:
+  - from: vela.html
+    to: /products/
+  - from: spyglass.html
+    to: /products/
+  - from: about.html
+    to: /about/
+permalink: "{{ redirect.from }}"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Moved | Meridion Systems</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ site.url }}{{ redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ redirect.to }}">
+</head>
+<body>
+  <p>This page has moved to <a href="{{ redirect.to }}">{{ site.url }}{{ redirect.to }}</a>.</p>
+</body>
+</html>
